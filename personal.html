@@ -12,17 +12,22 @@
         body {
             font-family: 'Merriweather', Georgia, serif;
             font-size: 18px;
-            margin: 20px;
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
+            min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
             flex-direction: column;
+            background: #000 url('resources/GiantCutout.jpg') center center / cover no-repeat fixed;
         }
 
         .title, .subtitle {
             text-align: center;
             font-family: 'Merriweather', Georgia, serif;
-            color: #000;
+            color: #fff;
+            text-shadow: 0 2px 6px rgba(0, 0, 0, 0.9);
         }
 
         .title {
@@ -70,7 +75,8 @@
             flex-direction: column;
             max-width: 800px;
             border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.55);
             margin-top: 20px;
             padding: 20px;
             text-align: center;
