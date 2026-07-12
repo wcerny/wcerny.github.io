@@ -32,45 +32,62 @@
             display: block;
             font-size: 18px;
             font-weight: normal;
+            margin-top: 5px;
         }
 
-        .small-title {
-            padding: 5px 20px;
-            font-size: 14px;
+        /* Top Tab Bar */
+        .tab-bar {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 6px;
+            margin-top: 15px;
+        }
+
+        .tab {
+            background-color: #87CEEB; /* Sky Blue */
+            border: none;
+            color: black;
+            padding: 8px 18px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .tab.active {
+            background-color: #5aaed0; /* Darker sky blue for the current page */
+            font-weight: bold;
         }
 
         .container {
             display: flex;
+            align-items: flex-start; /* Keep the two columns level at the top */
             max-width: 800px;
             border-radius: 8px;
-            overflow: hidden;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             margin-top: 20px;
             justify-content: center;
         }
 
-        .main-content {
+        .left-column {
+            flex: 0 0 40%;
             display: flex;
             flex-direction: column;
-            align-items: center; /* Center content horizontally */
-            text-align: center; /* Center text within the container */
-        }
-
-        .left-column {
-            flex: 0 0 50%; /* Fixed width for left column (adjust as needed) */
-        }
-
-        .left-column img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 8px 8px 0 0;
-            margin: 0 auto; /* Center image horizontally within the container */
-        }
-
-        .caption {
-            background-color: #f0f0f0;
-            padding: 10px;
+            align-items: center;
+            padding: 20px;
             text-align: center;
+        }
+
+        .headshot {
+            width: 250px;
+            height: 250px;
+            max-width: 100%;
+            object-fit: cover;
+            object-position: center 25%; /* Keep the face centered in the square crop */
+            border-radius: 8px;
         }
 
         /* Button Styles */
@@ -78,57 +95,45 @@
             display: flex;
             flex-direction: column;
             align-items: center; /* Center the buttons horizontally */
-            margin-top: 10px;
+            margin-top: 15px;
+            width: 100%;
         }
 
         .button-row {
             display: flex;
             flex-wrap: wrap;
+            justify-content: center;
         }
 
         .button {
             background-color: #87CEEB; /* Sky Blue */
             border: none;
             color: black;
-            padding: 8px 15px; /* Smaller size */
+            padding: 8px 15px;
             text-align: center;
             text-decoration: none;
             display: inline-block;
-            font-size: 16px; /* Smaller size */
+            font-size: 16px;
             margin: 5px;
             cursor: pointer;
             border-radius: 5px;
         }
 
-        .main-content p {
-            margin: 3px 20px 5px;
+        .right-column {
+            flex: 1; /* Take up the remaining space in the container */
+            padding: 20px;
+        }
+
+        .right-column p {
+            margin: 0 0 12px;
             color: #000; /* Black text color */
         }
 
-        .right-column {
-            flex: 1; /* Take up the remaining space in the container */
-        }
-
-        .subtitle {
-            text-align: center; /* Center subtitle text */
-            padding: 5px 20px;
-            font-size: 16px;
-            margin-bottom: 0;
-        }
-
         .about-me-heading {
-            font-size: 20px; /* Increased font size for the "About Me" heading */
+            font-size: 20px;
             font-weight: bold;
             margin-bottom: 10px;
-        }
-
-        .button-new-row {
-            margin-top: 10px;
-        }
-
-        /* Added a margin to the third button row */
-        .button-row-margin {
-            margin-top: 5px;
+            text-align: center;
         }
     </style>
 </head>
@@ -137,14 +142,33 @@
     <div class="title">
         William Cerny<span>Ph.D. Student in Astronomy at Yale University</span>
     </div>
+
+    <!-- Navigation Tabs -->
+    <div class="tab-bar">
+        <a href="index.html" class="tab active">Home</a>
+        <a href="personal.html" class="tab">Personal</a>
+        <a href="science.html" class="tab">Science</a>
+        <a href="travel.html" class="tab">Travel</a>
+        <a href="https://ui.adsabs.harvard.edu/search/p_=0&q=%20author%3A%22cerny%2Cw%22&sort=date%20desc%2C%20bibcode%20desc"
+            class="tab" target="_blank" rel="noopener">ADS Library</a>
+    </div>
+
     <div class="container">
-        <div class="main-content left-column">
-            <img src="./resources/LandingPagePhoto.png" alt="My Photo">
-            <div class="caption">
-                Me, in the Hale Library of the Carnegie Observatories in Pasadena (circa 2021)
+        <div class="left-column">
+            <img class="headshot" src="resources/Will%20Cerny-2026-4954.jpg" alt="William Cerny headshot">
+            <div class="button-container">
+                <div class="button-row">
+                    <a href="personal.html" class="button">Personal</a>
+                    <a href="science.html" class="button">Science</a>
+                </div>
+                <div class="button-row">
+                    <a href="travel.html" class="button">Travel</a>
+                    <a href="https://ui.adsabs.harvard.edu/search/p_=0&q=%20author%3A%22cerny%2Cw%22&sort=date%20desc%2C%20bibcode%20desc"
+                        class="button" target="_blank" rel="noopener">ADS Library</a>
+                </div>
             </div>
         </div>
-        <div class="main-content right-column">
+        <div class="right-column">
             <div class="about-me-heading">
                 Welcome to my site!
             </div>
@@ -154,34 +178,17 @@
                 Milky Way satellites and the subsequent measurement of their internal kinematics, dark matter contents, and
                 chemistries through spectroscopy.
             </p>
-            <br>
             <p>
                 Most of my discovery work is carried out as part of the DELVE Survey - a 125+ night effort to image the southern
                 sky with the Dark Energy Camera on the 4m Blanco Telescope in Chile. The spectroscopic component of my work then
                 involves obtaining with the largest optical telescopes on the planet, including the 6.5m Magellan telescopes
                 (Chile) and the 10m Keck telescopes (Hawai'i).
             </p>
-            <br>
             <p>
-                I am fortunate to be able to carry out this work with many wonderful scientists and mentors. My graduate advisor at Yale is 
+                I am fortunate to be able to carry out this work with many wonderful scientists and mentors. My graduate advisor at Yale is
                 Prof. Marla Geha, and I collaborate especially closely with Profs. Alex Drlica-Wagner and Alex Ji (UChicago), Ting Li (Univ. of Toronto), Dr.
                 Josh Simon (Carnegie Obs.), and Dr. Andrew Pace (CMU).
             </p>
-            <div class="button-container">
-                <div class="button-row">
-                    <a href="projects.html" class="button">Current Projects</a>
-                    <a href="outreach.html" class="button">Outreach</a>
-                </div>
-                <div class="button-row">
-                    <a href="link3" class="button">Codes and Data</a>
-                    <a href="https://ui.adsabs.harvard.edu/search/p_=0&q=%20author%3A%22cerny%2Cw%22&sort=date%20desc%2C%20bibcode%20desc"
-                        class="button">ADS Library</a>
-                </div>
-                <!-- Added the new class for the third button row -->
-                <div class="button-row button-new-row button-row-margin">
-                    <a href="link4" class="button">Conferences and Workshops</a>
-                </div>
-            </div>
         </div>
     </div>
 </body>
