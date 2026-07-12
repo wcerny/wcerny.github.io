@@ -111,6 +111,35 @@
             border: 1px solid #ddd;
         }
 
+        .science-card img {
+            cursor: zoom-in;
+        }
+
+        /* Lightbox overlay */
+        .lightbox {
+            display: none;
+            position: fixed;
+            inset: 0;
+            z-index: 1000;
+            background: rgba(0, 0, 0, 0.85);
+            justify-content: center;
+            align-items: center;
+            cursor: zoom-out;
+            padding: 30px;
+        }
+
+        .lightbox.open {
+            display: flex;
+        }
+
+        .lightbox img {
+            max-width: 95vw;
+            max-height: 95vh;
+            object-fit: contain;
+            border-radius: 6px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+        }
+
         .science-card .card-text h3 {
             margin: 0 0 8px;
             font-size: 21px;
@@ -155,7 +184,7 @@
         <h2>Research</h2>
 
         <div class="science-card">
-            <img src="resources/SixSatellites.png" alt="Six ultra-faint Milky Way satellites">
+            <img src="resources/SixSatellites.png" alt="Six ultra-faint Milky Way satellites" style="object-fit: contain;">
             <div class="card-text">
                 <h3>Discovery of Ultra-Faint Dwarf Galaxies and Star Clusters in the Local Universe</h3>
                 <p></p>
@@ -202,6 +231,34 @@
             </div>
         </div>
     </div>
+
+    <!-- Lightbox overlay -->
+    <div class="lightbox" id="lightbox"><img src="" alt=""></div>
+
+    <script>
+        (function () {
+            var lightbox = document.getElementById('lightbox');
+            var lightboxImg = lightbox.querySelector('img');
+
+            document.querySelectorAll('.science-card img').forEach(function (img) {
+                img.addEventListener('click', function () {
+                    lightboxImg.src = img.src;
+                    lightboxImg.alt = img.alt;
+                    lightbox.classList.add('open');
+                });
+            });
+
+            lightbox.addEventListener('click', function () {
+                lightbox.classList.remove('open');
+            });
+
+            document.addEventListener('keydown', function (e) {
+                if (e.key === 'Escape') {
+                    lightbox.classList.remove('open');
+                }
+            });
+        })();
+    </script>
 </body>
 
 </html>
