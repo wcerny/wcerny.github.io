@@ -73,7 +73,8 @@
         .container {
             display: flex;
             flex-direction: column;
-            max-width: 800px;
+            width: 100%;
+            max-width: 1196px;
             border-radius: 8px;
             background-color: #fff;
             box-shadow: 0 8px 30px rgba(0, 0, 0, 0.55);
@@ -85,6 +86,34 @@
         .container h2 {
             font-size: 28px;
             margin-bottom: 12px;
+        }
+
+        .science-card {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            text-align: left;
+            margin: 18px 0; /* vertical padding between cards */
+        }
+
+        .science-card img,
+        .science-card .card-img-placeholder {
+            width: 200px;
+            height: 200px; /* square */
+            object-fit: cover;
+            flex-shrink: 0;
+            border-radius: 6px;
+            background-color: #fff; /* white placeholder look */
+            border: 1px solid #ddd;
+        }
+
+        .science-card .card-text h3 {
+            margin: 0 0 8px;
+            font-size: 22px;
+        }
+
+        .science-card .card-text p {
+            margin: 0;
         }
     </style>
 </head>
@@ -105,7 +134,36 @@
 
     <div class="container">
         <h2>Research</h2>
-        <p>Under construction &mdash; check back soon!</p>
+
+        <div class="science-card">
+            <div class="card-img-placeholder"></div>
+            <div class="card-text">
+                <h3>Lorem Ipsum One</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </div>
+        </div>
+
+        <div class="science-card">
+            <img src="resources/EridanusIII.jpg" alt="Eridanus III">
+            <div class="card-text">
+                <h3>Lorem Ipsum Two</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </div>
+        </div>
+
+        <div class="science-card">
+            <div class="card-img-placeholder"></div>
+            <div class="card-text">
+                <h3>Lorem Ipsum Three</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </div>
+        </div>
     </div>
 </body>
 
