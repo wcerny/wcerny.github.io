@@ -132,6 +132,13 @@
             font-weight: bold;
         }
 
+        /* Keyword list: fills row-wise, so 9 items give three rows */
+        .cv-card ul.cv-keywords {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2px 24px;
+        }
+
         .cv-card ul {
             margin: 5px 0 0;
             padding-left: 22px;
@@ -201,6 +208,22 @@
                             Along RR Lyrae Sightlines</em>; Advisor: Prof. Alex Drlica-Wagner</li>
                 </ul>
             </div>
+        </div>
+
+        <div class="cv-card">
+            <h3>Research Interests</h3>
+
+            <ul class="cv-keywords">
+                <li>Ultra-faint dwarf galaxies</li>
+                <li>Milky Way satellites</li>
+                <li>Near-field cosmology</li>
+                <li>The threshold of galaxy formation</li>
+                <li>Dark matter in dwarf galaxies</li>
+                <li>Stellar spectroscopy</li>
+                <li>Chemical abundances</li>
+                <li>Wide-field imaging surveys</li>
+                <li>Star clusters and stellar streams</li>
+            </ul>
         </div>
 
         <div class="cv-card">
