@@ -142,6 +142,11 @@
             font-size: 15px;
         }
 
+        /* Flush-right dates inside a bullet track the bullet's own text size */
+        .cv-card li .cv-entry-head .cv-date {
+            font-size: 15px;
+        }
+
         /* Sub-bullets sit slightly smaller and tighter under their parent */
         .cv-card ul ul {
             margin: 4px 0 6px;
@@ -230,8 +235,12 @@
             <h3>Outreach</h3>
 
             <ul>
-                <li>Public Observing and/or Event Telescope Assistant, Yale Leitner Family Observatory
-                    (2023&ndash;Present)
+                <li>
+                    <div class="cv-entry-head">
+                        <span>Public Observing and/or Event Telescope Assistant,
+                            Yale Leitner Family Observatory</span>
+                        <span class="cv-date">2023&ndash;Present</span>
+                    </div>
                     <ul>
                         <li>Across 40+ public observing nights and special events, I have operated the
                             observatory&rsquo;s telescopes for visitors, helping guests of all ages find targets
