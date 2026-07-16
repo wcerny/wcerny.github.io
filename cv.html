@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV | William Cerny</title>
+    <link rel="icon" type="image/png" href="resources/Favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap">
+    <style>
+        body {
+            font-family: 'Merriweather', Georgia, serif;
+            font-size: 18px;
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background: #000 url('resources/GiantCutout.jpg') center center / cover no-repeat fixed;
+        }
+
+        .title, .subtitle {
+            text-align: center;
+            font-family: 'Merriweather', Georgia, serif;
+            color: #fff;
+            text-shadow: 0 2px 6px rgba(0, 0, 0, 0.9);
+        }
+
+        .title {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .title span {
+            display: block;
+            font-size: 18px;
+            font-weight: normal;
+            margin-top: 5px;
+        }
+
+        /* Top Tab Bar */
+        .tab-bar {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 6px;
+            margin-top: 15px;
+        }
+
+        .tab {
+            background-color: #87CEEB; /* Sky Blue */
+            border: none;
+            color: black;
+            padding: 11px 24px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 19px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .tab.active {
+            background-color: #5aaed0;
+            font-weight: bold;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            max-width: 1250px;
+            border-radius: 8px;
+            background-color: #fff;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.55);
+            margin-top: 20px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .container h2 {
+            font-size: 28px;
+            margin-bottom: 12px;
+        }
+
+        .cv-card {
+            text-align: left;
+            margin: 18px 0;
+            border: 3px solid #000;
+            border-radius: 8px;
+            padding: 18px;
+        }
+
+        .cv-card h3 {
+            margin: 0;
+            font-size: 21px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="title">
+        William Cerny<span>Ph.D. Candidate in Astronomy at Yale University</span>
+    </div>
+
+    <!-- Navigation Tabs -->
+    <div class="tab-bar">
+        <a href="index.html" class="tab">Home</a>
+        <a href="science.html" class="tab">Research</a>
+        <a href="travel.html" class="tab">Travel</a>
+        <a href="cv.html" class="tab active">CV</a>
+        <a href="https://ui.adsabs.harvard.edu/search/p_=0&q=%20author%3A%22cerny%2Cw%22&sort=date%20desc%2C%20bibcode%20desc"
+            class="tab" target="_blank" rel="noopener">Publications</a>
+    </div>
+
+    <div class="container">
+        <h2>CV</h2>
+
+        <div class="cv-card">
+            <h3>Curriculum Vitae</h3>
+        </div>
+    </div>
+</body>
+
+</html>
